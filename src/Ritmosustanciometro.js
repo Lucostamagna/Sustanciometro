@@ -5,15 +5,18 @@ import { carga, aparecerDeAbajo } from "./Animaciones"; // Importamos las animac
 const Contenedor = styled.div`
   width: 100%;
   height: 36px;
-  margin: 6px 0;
-  animation: ${aparecerDeAbajo} 1s ease-in-out;
+  margin: 6.5px 0;
+  animation: ${aparecerDeAbajo} 3.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid gainsboro;
+  position: relative;
+  border: 1.5px solid gainsboro;
 
   .cantidad {
     z-index: 1;
+    font-size: medium;
+    font-weight: 520;
   }
 
   .barra {
@@ -23,20 +26,17 @@ const Contenedor = styled.div`
     left: 0;
     background-color: hsl(${(props) => props.ritmosustancia}, 100%, 50%);
     width: ${(props) => props.ritmosustancia}%;
-    animation: ${(props) => carga(props.ritmosustancia)} 1s ease-in-out;
+    animation: ${(props) => carga(props.ritmosustancia)} 3.5s ease-in-out;
     animation-fill-mode: forwards;
   }
 `;
 
-function Ritmosustanciometro({ nombre, ritmosustancia }) {
-  return (
-    <Contenedor ritmosustancia={ritmosustancia}>
-      <div className="cantidad">
-        {nombre}: {ritmosustancia}
-      </div>
-      <div className="barra" />
-    </Contenedor>
-  );
-}
+const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
+  <Contenedor ritmosustancia={ritmosustancia}>
+    <div className="cantidad">{nombre}: {ritmosustancia}</div>
+    <div className="barra" />
+  </Contenedor>
+);
+
 
 export default Ritmosustanciometro;

@@ -4,7 +4,7 @@ import { keyframes } from "styled-components";
 export const aparecerDeAbajo = keyframes`
   0% {
     transform: translateY(20px);
-    opacity: 0;
+    opacity: 0.3;
   }
 
   100% {
@@ -23,5 +23,6 @@ export const carga = (valor) => keyframes`
   100% {
     background-color: hsl(${valor}, 100%, 50%);
     width: ${valor}%;
+    
   }
 `;
